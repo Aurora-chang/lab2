@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_dropout_00_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "f3290aea0074ccc28fcb5f8563a5689b1994e27728c6bb4a77738c9ea335574d",
+    "last.pt": "dd769d75bb848294dad4cdfa8e40a5cf0b8cdd07cd8fa3dc395bd632d59bb917"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 42,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 42,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

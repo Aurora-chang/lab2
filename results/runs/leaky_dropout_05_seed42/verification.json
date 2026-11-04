@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_leaky_dropout_05_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "1fa9aaef570c6d58566fbc75b0a1089d0626800917fe19b88184fde04c2820d2",
+    "last.pt": "6bb07a10f0521a68d9aa22b5550179313015625c545827237fd11594dd5a19ed"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 129,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 129,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

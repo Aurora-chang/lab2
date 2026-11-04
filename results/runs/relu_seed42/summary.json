@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "selection_criterion": "validation_accuracy",
+  "selected_epoch": 146,
+  "best_validation_accuracy": 86.57407407407408,
+  "selected_checkpoint_scores": {
+    "train": {
+      "loss": 0.04714863016097634,
+      "accuracy": 99.53703703703704
+    },
+    "validation": {
+      "loss": 0.3617703202697966,
+      "accuracy": 86.57407407407408
+    },
+    "test": {
+      "loss": 0.4809334812340913,
+      "accuracy": 81.38888888888889
+    }
+  },
+  "peak_test_accuracy": 83.33333333333333,
+  "peak_test_epoch": 127,
+  "peak_test_note": "Maximum over monitored epochs; not an independent held-out estimate.",
+  "accuracy_unit": "percent",
+  "duration_seconds": 100.6847696719999,
+  "parameters": 17874
+}

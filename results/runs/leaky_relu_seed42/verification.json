@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_activation_leaky_relu_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "c899095a551e7f84656c346989c501ab39e7573cb40e7cd30d813ae300329796",
+    "last.pt": "ca285cf2d8f5f44e7fa8c24575f466758ff0ae6aebe064bcf2e6e1b6d4a5c34f"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 131,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 131,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

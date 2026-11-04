@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "eegnet_baseline_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "16c06922db7dcf3db9f64347df542be380ca21e147888aed05f5e25bdbc73bc8",
+    "last.pt": "69bd6a330f67f01de477cd3e852729a9bcbe997bd242b31984bd05cc101fe5df"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 132,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 132,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

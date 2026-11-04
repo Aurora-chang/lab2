@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_activation_relu_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "69a1afcad60fc8de5e862b02aaba96c8d0835448bb31d34205e4ed22d76bfed1",
+    "last.pt": "9195c6e9ef9db10680e2252dc01b61740161fd1255852671a93444548bbc144a"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 146,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 146,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

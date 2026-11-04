@@ -1,0 +1,60 @@
+{
+  "experiment": "leaky_relu_seed42",
+  "model_seed": 42,
+  "split_seed": 42,
+  "checkpoint_epoch": 131,
+  "checkpoint_sha256": "c899095a551e7f84656c346989c501ab39e7573cb40e7cd30d813ae300329796",
+  "matrix_axes": "rows=true, columns=predicted",
+  "label_mapping": {
+    "0": "original label 1",
+    "1": "original label 2"
+  },
+  "evaluation_mode": true,
+  "splits": {
+    "train": {
+      "counts": [
+        [
+          431,
+          1
+        ],
+        [
+          10,
+          422
+        ]
+      ],
+      "n": 864,
+      "accuracy_percent": 98.72685185185185,
+      "cross_entropy_loss": 0.0739728695264569
+    },
+    "validation": {
+      "counts": [
+        [
+          102,
+          6
+        ],
+        [
+          18,
+          90
+        ]
+      ],
+      "n": 216,
+      "accuracy_percent": 88.88888888888889,
+      "cross_entropy_loss": 0.3328944974475437
+    },
+    "test": {
+      "counts": [
+        [
+          471,
+          69
+        ],
+        [
+          93,
+          447
+        ]
+      ],
+      "n": 1080,
+      "accuracy_percent": 85.0,
+      "cross_entropy_loss": 0.38898974303846007
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_leaky_lr_0001_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "0b0a920a1918436ad64cee9c35162ec363041224710a491af5b201a7f5ca088e",
+    "last.pt": "e43995c3ae6dce46bd9c616705be6710d9a0f73800ea5845b6e0c40d1edb7319"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 69,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 69,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

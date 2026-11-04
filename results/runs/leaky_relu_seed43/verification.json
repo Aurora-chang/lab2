@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_repeat_leaky_relu_seed43",
+  "checkpoint_sha256": {
+    "best.pt": "e431b88cb376c81609d4b088460a50481be818e6344f5b1a727af2d5541165b9",
+    "last.pt": "a861cf1805ae45d6049c2cb42b90ec931ccc0dd6b27538209ffc01a6e4b50338"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 146,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 146,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

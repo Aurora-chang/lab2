@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_repeat_baseline_seed43",
+  "checkpoint_sha256": {
+    "best.pt": "48ab6980ad9a766969eff884cbd4cd627cd6b19e97a6443b08cb924e2d6409b3",
+    "last.pt": "cad93eb1641c1c4af0929690f8b841c8e0dd12ea4fd066f3e210d1fe0fabd760"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 105,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 105,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

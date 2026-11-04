@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_depthwise_separable_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "ac0bc0aeb20bf0fcd0dc7278c987d9ecc2f5ca958f821d779f11bba72915b9eb",
+    "last.pt": "78038c45e92b06e6314f38e68ab3cc858ab408ee1ef02fc569d29708232f4851"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 130,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 130,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

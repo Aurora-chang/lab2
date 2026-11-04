@@ -1,0 +1,29 @@
+{
+  "experiment_name": "leaky_lr_0001_seed42",
+  "seed": 42,
+  "data_dir": "lab2_EEG_classification/data",
+  "output_dir": "outputs",
+  "model": {
+    "name": "EEGNet",
+    "activation": "leaky_relu",
+    "elu_alpha": 1.0,
+    "dropout": 0.25,
+    "negative_slope": 0.01,
+    "temporal_block": "slide"
+  },
+  "training": {
+    "epochs": 150,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "adam",
+    "weight_decay": 0.001,
+    "loss": "cross_entropy"
+  },
+  "evaluation": {
+    "validation_fraction": 0.2,
+    "stratify": true,
+    "checkpoint_metric": "validation_accuracy",
+    "record_test_curves": true,
+    "split_seed": 42
+  }
+}

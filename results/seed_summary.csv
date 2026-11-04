@@ -1,0 +1,3 @@
+configuration,n,model_seeds,split_seed,validation_accuracy_mean,validation_accuracy_sample_std,selected_test_accuracy_mean,selected_test_accuracy_sample_std
+baseline,3,"42,43,44",42,82.4074074074074,1.224884866233604,77.46913580246914,1.539192301208851
+leaky_relu,3,"42,43,44",42,88.27160493827161,0.5345835825829856,84.50617283950618,0.5099602358598245

@@ -1,0 +1,41 @@
+{
+  "original_experiment_name": "phase5_elu_alpha_05_seed42",
+  "checkpoint_sha256": {
+    "best.pt": "064a3a706d2c32fd126b0e1550d6a4c05acee6ac2eaa9d9ed082bea1af3a546e",
+    "last.pt": "75265dc15f22edf5be0afd9de7961151a3f9553bb0fb5d6b139a114949446ade"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 52,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 52,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot"
+    ]
+  }
+}

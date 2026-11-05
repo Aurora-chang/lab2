@@ -1,0 +1,6 @@
+experiment,seed,split_seed,epochs,activation,learning_rate,dropout,selected_epoch,validation_accuracy,selected_test_accuracy,peak_monitored_test_accuracy,peak_test_epoch,parameters,duration_seconds,run_dir
+deepconvnet_elu_seed42,42,42,150,elu,0.001,0.5,95,86.57407407407408,82.77777777777777,84.62962962962963,145,266352,28.39814181600002,results/bonus/runs/deepconvnet_elu_seed42
+deepconvnet_elu_lr0005_seed42,42,42,150,elu,0.0005,0.5,73,84.72222222222223,81.11111111111111,83.70370370370371,132,266352,27.806283027999996,results/bonus/runs/deepconvnet_elu_lr0005_seed42
+deepconvnet_leaky_relu_seed42,42,42,150,leaky_relu,0.001,0.5,126,85.64814814814815,86.01851851851852,86.75925925925925,130,266352,27.683934658999988,results/bonus/runs/deepconvnet_leaky_relu_seed42
+deepconvnet_elu_seed43,43,42,150,elu,0.001,0.5,63,86.11111111111111,82.31481481481481,84.53703703703704,144,266352,27.612523737000004,results/bonus/runs/deepconvnet_elu_seed43
+deepconvnet_elu_seed44,44,42,150,elu,0.001,0.5,85,87.03703703703704,83.79629629629629,85.64814814814815,132,266352,28.051045165999994,results/bonus/runs/deepconvnet_elu_seed44

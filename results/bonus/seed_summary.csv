@@ -1,0 +1,4 @@
+model,configuration,n,model_seeds,split_seed,validation_accuracy_mean,validation_accuracy_sample_std,selected_test_accuracy_mean,selected_test_accuracy_sample_std,parameters
+EEGNet,baseline,3,"42,43,44",42,82.4074074074074,1.224884866233604,77.46913580246914,1.539192301208851,17874
+EEGNet,leaky_relu,3,"42,43,44",42,88.27160493827161,0.5345835825829856,84.50617283950618,0.5099602358598245,17874
+DeepConvNet,deepconvnet_elu,3,"42,43,44",42,86.57407407407408,0.4629629629629619,82.96296296296296,0.7579030344326341,266352

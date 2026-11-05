@@ -76,7 +76,7 @@ Confusion matrix 使用 **seed 42、epoch 131 的 validation-selected best.pt**�
 
 - 選定 LeakyReLU checkpoints 的 training accuracy 約 98.6–98.8%，validation 約 88%，仍有 generalization gap。
 - 所有實驗最高 monitored test accuracy 為 **86.11%**（LeakyReLU seed 44、epoch 123）；該 run 的 validation-selected epoch 為 121，selected test accuracy 為 83.98%。最大值不能取代選定 checkpoint 或三個 seeds 的平均。
-- 目前未達作業 87% performance bracket；未實作 DeepConvNet。
+- 目前 EEGNet 結果未達作業 87% performance bracket。DeepConvNet Bonus 的五組 GPU 實驗與獨立審查已完成；見 [Bonus 結果](bonus/README.md)。
 - Runtime／Drive 狀況不同，training duration 僅供記錄，不當成嚴格 benchmark。
 
 ## 完整數據與重現
@@ -85,3 +85,7 @@ Confusion matrix 使用 **seed 42、epoch 131 的 validation-selected best.pt**�
 - [seed_summary.csv](seed_summary.csv)：三個 seeds 的平均與 sample SD。
 - [runs/](runs/)：每組的完整 150-epoch metrics、summary、設定、環境與驗證 provenance。目錄名稱已統一，原始 experiment name 留在各 verification.json。
 - [重現說明](../docs/REPRODUCIBILITY.md)：公開 metrics 可直接重建總表／圖表；完整 checkpoint inference 需要本機 dataset 與原始權重。
+
+## DeepConvNet Bonus
+
+Bonus 結果已完成獨立驗證，集中在 [bonus/README.md](bonus/README.md)。選定 DeepConvNet ELU 的三個 seeds Test Accuracy 為 **82.96% ± 0.76%**，原始 EEGNet ELU 為 77.47% ± 1.54%，選定 EEGNet LeakyReLU 為 84.51% ± 0.51%。因此目前仍保留 LeakyReLU EEGNet 為較佳設定。

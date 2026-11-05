@@ -1,6 +1,7 @@
 # Local data, checkpoints, raw returns, archives, and personal documents
 local_archive/
 outputs/
+/Lab2_*_results/
 lab2_EEG_classification/data/*
 !lab2_EEG_classification/data/README.md
 *.npz

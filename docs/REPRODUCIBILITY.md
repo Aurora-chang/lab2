@@ -80,3 +80,17 @@ python scripts/analyze_results.py --checkpoint /path/to/original/seed42/best.pt
 每個 `results/runs/<experiment>/` 包含 `config.json`、`metrics.csv`、`summary.json`、`environment.json`、`verification.json`。公開設定的名稱已統一，data/output paths 改為相對路徑；原始訓練的 experiment name 和 checkpoint hashes 留在 verification provenance，原始指標／summary 未改寫。公開快照不含權重或 EEG 訊號。
 
 `local_archive/` 是整理前資料的本機封存，已被 Git 忽略。原始訓練成果在 `local_archive/training_artifacts/`，`checkpoints.json` 記錄各設定的本機 checkpoint 路徑；歷史文件與舊交接程式可由 `before_cleanup.zip` 還原。課程 PDF、回傳 ZIP、報告草稿放在 `local_archive/source_materials/`，未刪除或修改內容。
+
+## DeepConvNet Bonus
+
+已完成且獨立驗證的五組 DeepConvNet 結果集中於 [`results/bonus/`](../results/bonus/README.md)，與原本 17 組 EEGNet 結果分開保存。
+
+```bash
+# 不需 dataset／checkpoint，從公開快照重繪 Bonus 圖表
+python scripts/bonus_results.py results/bonus
+
+# 要重跑完整 GPU 實驗時才執行；既有 EEGNet 不會重訓
+python scripts/run_bonus.py --output-dir outputs/bonus --device cuda
+```
+
+架構、選模規則、Colab 與完整驗證／匯出方式見 [Bonus 文件](BONUS.md)。

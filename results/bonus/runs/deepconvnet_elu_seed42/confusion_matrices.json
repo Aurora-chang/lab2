@@ -1,0 +1,40 @@
+{
+  "selected_epoch": 95,
+  "axes": "rows=true, columns=predicted",
+  "label_mapping": {
+    "0": "original label 1",
+    "1": "original label 2"
+  },
+  "splits": {
+    "train": [
+      [
+        429,
+        3
+      ],
+      [
+        20,
+        412
+      ]
+    ],
+    "validation": [
+      [
+        97,
+        11
+      ],
+      [
+        18,
+        90
+      ]
+    ],
+    "test": [
+      [
+        471,
+        69
+      ],
+      [
+        117,
+        423
+      ]
+    ]
+  }
+}

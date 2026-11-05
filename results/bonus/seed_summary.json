@@ -1,0 +1,38 @@
+[
+  {
+    "model": "EEGNet",
+    "configuration": "baseline",
+    "n": 3,
+    "model_seeds": "42,43,44",
+    "split_seed": 42,
+    "validation_accuracy_mean": 82.4074074074074,
+    "validation_accuracy_sample_std": 1.224884866233604,
+    "selected_test_accuracy_mean": 77.46913580246914,
+    "selected_test_accuracy_sample_std": 1.539192301208851,
+    "parameters": 17874
+  },
+  {
+    "model": "EEGNet",
+    "configuration": "leaky_relu",
+    "n": 3,
+    "model_seeds": "42,43,44",
+    "split_seed": 42,
+    "validation_accuracy_mean": 88.27160493827161,
+    "validation_accuracy_sample_std": 0.5345835825829856,
+    "selected_test_accuracy_mean": 84.50617283950618,
+    "selected_test_accuracy_sample_std": 0.5099602358598245,
+    "parameters": 17874
+  },
+  {
+    "model": "DeepConvNet",
+    "configuration": "deepconvnet_elu",
+    "n": 3,
+    "model_seeds": "42,43,44",
+    "split_seed": 42,
+    "validation_accuracy_mean": 86.57407407407408,
+    "validation_accuracy_sample_std": 0.4629629629629619,
+    "selected_test_accuracy_mean": 82.96296296296296,
+    "selected_test_accuracy_sample_std": 0.7579030344326341,
+    "parameters": 266352
+  }
+]

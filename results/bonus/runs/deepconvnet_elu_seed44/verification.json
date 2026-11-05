@@ -1,0 +1,44 @@
+{
+  "checkpoint_sha256": {
+    "best.pt": "4e166a5b23a98dde33efee56224def64066a4b00fe483acbb318175f66fb5183",
+    "last.pt": "5d61eedfc2309de7fab2f113c93c34d91532e4fc69960e6efaba6777056ef29b"
+  },
+  "gpu_verification": {
+    "status": "passed",
+    "verification_device": "cuda",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 85,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot",
+      "all_split_confusion_matrices",
+      "max_norm_constraints"
+    ]
+  },
+  "independent_cpu_verification": {
+    "status": "passed",
+    "verification_device": "cpu",
+    "training_device": "cuda",
+    "epochs": 150,
+    "selected_epoch": 85,
+    "checks": [
+      "artifacts",
+      "source_and_data_hashes",
+      "preprocessing",
+      "metrics",
+      "validation_selection",
+      "peak_test_summary",
+      "checkpoint_reload",
+      "plot",
+      "all_split_confusion_matrices",
+      "max_norm_constraints"
+    ]
+  }
+}

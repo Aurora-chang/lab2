@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "reviewed_full_runs": 5,
+  "selected_experiment": "deepconvnet_elu_seed42",
+  "source": "Independent CPU review of original GPU runs",
+  "checks": [
+    "source_and_data_hashes",
+    "planned_configs",
+    "fixed_split",
+    "checkpoint_predictions",
+    "all_split_confusion_counts",
+    "max_norm_constraints",
+    "validation_selection",
+    "csv_json_consistency",
+    "sample_standard_deviation"
+  ],
+  "selected_statistics": {
+    "model": "DeepConvNet",
+    "configuration": "deepconvnet_elu",
+    "n": 3,
+    "model_seeds": "42,43,44",
+    "split_seed": 42,
+    "validation_accuracy_mean": 86.57407407407408,
+    "validation_accuracy_sample_std": 0.4629629629629619,
+    "selected_test_accuracy_mean": 82.96296296296296,
+    "selected_test_accuracy_sample_std": 0.7579030344326341,
+    "parameters": 266352
+  }
+}

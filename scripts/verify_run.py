@@ -34,7 +34,17 @@ def verify_run(run_dir, data_dir=None, device="cpu", require_cuda=False):
     environment = json.loads((run_dir / "environment.json").read_text())
     saved_prep = json.loads((run_dir / "preprocessing.json").read_text())
     require(summary["status"] == "complete", "Run did not complete")
-    require(environment["source_sha256"] == source_hashes(), "Code differs from training source")
+    is_bonus = config["model"]["name"] == "DeepConvNet"
+    if is_bonus:
+        from bonus_training import source_hashes as bonus_source_hashes
+        from models.DeepConvNet import DeepConvNet
+        expected_hashes = bonus_source_hashes()
+        model_class = DeepConvNet
+    else:
+        require(config["model"]["name"] == "EEGNet", "Unknown model")
+        expected_hashes = source_hashes()
+        model_class = EEGNet
+    require(environment["source_sha256"] == expected_hashes, "Code differs from training source")
     device = torch.device(device)
     if require_cuda:
         require(environment["device"].startswith("cuda") and environment["gpu"],
@@ -78,9 +88,17 @@ def verify_run(run_dir, data_dir=None, device="cpu", require_cuda=False):
     require(best["epoch"] == summary["selected_epoch"], "Wrong best checkpoint epoch")
     require(last["epoch"] == len(rows), "Wrong last checkpoint epoch")
     require(bool(best["optimizer_state_dict"]["state"]), "Checkpoint lacks trained optimizer state")
-    model = EEGNet(**{k: v for k, v in config["model"].items() if k != "name"}).to(device)
+    model = model_class(**{k: v for k, v in config["model"].items() if k != "name"}).to(device)
     model.load_state_dict(best["model_state_dict"])
-    for split in ("validation", "test"):
+    matrices = json.loads((run_dir / "confusion_matrices.json").read_text()) if is_bonus else None
+    if is_bonus:
+        require(matrices["selected_epoch"] == summary["selected_epoch"], "Confusion checkpoint differs")
+        for saved in (best, last):
+            for key, weights in saved["model_state_dict"].items():
+                if key.endswith("weight") and weights.ndim >= 2:
+                    limit = config["model"]["classifier_max_norm"] if key.startswith("classify.") else config["model"]["conv_max_norm"]
+                    require(bool((weights.flatten(1).norm(2, dim=1) <= limit + 1e-5).all()), "Max norm constraint violated")
+    for split in (("train", "validation", "test") if is_bonus else ("validation", "test")):
         x, y = splits[split]
         loader = DataLoader(TensorDataset(torch.from_numpy(x), torch.from_numpy(y)),
                             batch_size=config["training"]["batch_size"])
@@ -90,6 +108,15 @@ def verify_run(run_dir, data_dir=None, device="cpu", require_cuda=False):
                 f"Reloaded {split} loss differs")
         require(np.isclose(actual["accuracy"], expected["accuracy"], atol=1e-6, rtol=0),
                 f"Reloaded {split} accuracy differs")
+        if is_bonus:
+            predicted = []
+            model.eval()
+            with torch.inference_mode():
+                for inputs, _ in loader:
+                    predicted.extend(model(inputs.to(device)).argmax(1).cpu().tolist())
+            matrix = np.zeros((2, 2), dtype=np.int64)
+            np.add.at(matrix, (y, np.asarray(predicted)), 1)
+            require(matrix.tolist() == matrices["splits"][split], "Confusion counts differ")
         if split == "validation":
             require(np.isclose(actual["accuracy"], selected["validation_accuracy"], atol=1e-6, rtol=0),
                     "Best checkpoint does not reproduce its validation epoch")
@@ -99,6 +126,8 @@ def verify_run(run_dir, data_dir=None, device="cpu", require_cuda=False):
               "selected_epoch": summary["selected_epoch"],
               "checks": ["artifacts", "source_and_data_hashes", "preprocessing", "metrics",
                          "validation_selection", "peak_test_summary", "checkpoint_reload", "plot"]}
+    if is_bonus:
+        result["checks"].extend(["all_split_confusion_matrices", "max_norm_constraints"])
     (run_dir / "verification.json").write_text(json.dumps(result, indent=2) + "\n")
     return result
 

@@ -1,4 +1,3 @@
-"""Verify a completed CPU/GPU run, including checkpoint inference on its device."""
 import argparse
 import csv
 import hashlib
@@ -139,7 +138,7 @@ if __name__ == "__main__":
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
     parser.add_argument("--require-cuda", action="store_true")
     args = parser.parse_args()
-    # Preserve original GPU verification; direct CLI writes a separate local review.
+
     original_path = args.run_dir / "verification.json"
     original = original_path.read_bytes() if original_path.exists() else None
     try:

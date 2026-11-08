@@ -1,8 +1,3 @@
-"""Rebuild portable experiment tables and figures from results/runs snapshots.
-
-Optional --checkpoint recomputes confusion matrices using the selected checkpoint.
-No training is performed. Published summaries never depend on local absolute paths.
-"""
 import argparse
 import csv
 import hashlib

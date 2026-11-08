@@ -1,4 +1,3 @@
-"""Configurable EEGNet training. Run from any working directory."""
 import argparse
 import csv
 from datetime import datetime, timezone
@@ -221,7 +220,7 @@ def run(config, device, num_threads=None):
                     "preprocessing": preprocessing, "metrics": row,
                     "best_validation_accuracy": best_accuracy, "best_epoch": best_epoch,
                 }
-                # Serialize immediately: later optimizer steps cannot mutate saved weights.
+
                 if improved:
                     save_checkpoint(run_dir / "best.pt", checkpoint)
                 save_checkpoint(run_dir / "last.pt", checkpoint)

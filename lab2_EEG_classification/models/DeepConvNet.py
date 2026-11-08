@@ -1,9 +1,3 @@
-"""Trial-wise DeepConvNet for (B, 1, 2, 750) EEG trials.
-
-Independent PyTorch implementation of the four-block architecture described by
-Schirrmeister et al. (2017), https://arxiv.org/abs/1703.05051.
-Temporal kernels 10, max-pooling size/stride 3; adapted two-class dense head.
-"""
 import math
 import torch
 from torch import nn
@@ -42,7 +36,7 @@ class DeepConvNet(nn.Module):
 
     @torch.no_grad()
     def constrain_weights(self):
-        """Project each output filter/row after every optimizer update."""
+
         for layer in self.modules():
             if isinstance(layer,(nn.Conv2d,nn.Linear)):
                 limit=self.conv_max_norm if isinstance(layer,nn.Conv2d) else self.classifier_max_norm

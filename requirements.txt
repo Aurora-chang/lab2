@@ -1,4 +1,3 @@
-# Colab supplies CUDA-compatible PyTorch; keep that installed version.
 numpy>=1.24
 matplotlib>=3.7
 torch>=2.0

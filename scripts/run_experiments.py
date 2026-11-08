@@ -1,4 +1,3 @@
-"""Train explicit configurations, verify checkpoints, and reuse matching completed runs."""
 import argparse
 import csv
 import json
@@ -20,7 +19,7 @@ def identity(config):
 
 
 def verify_saved(folder, data_dir, device):
-    """Preserve an existing verification record, including GPU provenance."""
+
     path=folder/'verification.json'
     original=path.read_bytes() if path.exists() else None
     try:

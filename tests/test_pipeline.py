@@ -1,4 +1,3 @@
-"""CPU regression checks; no downloads or GPU required."""
 import argparse
 import copy
 import csv

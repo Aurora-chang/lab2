@@ -1,4 +1,3 @@
-"""Load EEG data and fit missing-value imputation on training examples only."""
 from pathlib import Path
 import numpy as np
 
@@ -70,7 +69,7 @@ def prepare_data(data_dir=DEFAULT_DATA_DIR, validation_fraction=0.2,
 
 
 def read_bci_data(data_dir=DEFAULT_DATA_DIR):
-    """Compatibility loader without a validation split; uses full train mean."""
+
     train_x, train_y, _ = load_split(data_dir, "train")
     test_x, test_y, _ = load_split(data_dir, "test")
     fill = float(np.nanmean(train_x, dtype=np.float64))

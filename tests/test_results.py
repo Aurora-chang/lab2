@@ -1,4 +1,3 @@
-"""Public result snapshots are consistent and preserve training provenance."""
 import csv
 import hashlib
 import importlib.util

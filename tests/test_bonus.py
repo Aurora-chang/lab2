@@ -1,4 +1,3 @@
-"""DeepConvNet gradients, max-norm updates, selection, and artifact reload checks."""
 import json
 from pathlib import Path
 import sys
@@ -62,7 +61,7 @@ class BonusTests(unittest.TestCase):
             folder=Path(temporary); data=folder/'data'; data.mkdir(); fixture_data(data)
             config=load_config(ROOT/'configs/bonus/deepconvnet_elu.json',folder/'runs',epochs=2)
             config['data_dir']=str(data); config['training']['batch_size']=8
-            # Interval exceeds epochs: final artifacts must still be saved.
+
             config['training']['artifact_interval']=25
             target=run(config,torch.device('cpu'),2)
             result=verify_run(target,data,'cpu')

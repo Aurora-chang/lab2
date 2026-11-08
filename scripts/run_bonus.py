@@ -1,8 +1,3 @@
-"""DeepConvNet search, validation-only selection, and seed repetitions.
-
-Defaults: three seed-42 candidates, then the winner at seeds 43/44. Existing
-EEGNet scores are compared without retraining. Run --smoke for local checks.
-"""
 import argparse
 import csv
 import json
@@ -82,7 +77,7 @@ def main():
         print('SMOKE CHECKS PASSED; these scores are not full experiment results.'); return
     winner=select_candidate(rows,[c['experiment_name'] for c in configs])
     selected=next(c for c in configs if c['experiment_name']==winner['experiment'])
-    # Strip paths to keep the selection stable when Colab extracts to a new folder.
+
     selected_portable=json.loads(json.dumps(selected)); selected_portable.update(data_dir='lab2_EEG_classification/data',output_dir='outputs/bonus')
     decision={'criterion':'validation_accuracy; ties prefer ELU 0.001, ELU 0.0005, then LeakyReLU 0.001',
               'selected_experiment':winner['experiment'],'selected_config':selected_portable,

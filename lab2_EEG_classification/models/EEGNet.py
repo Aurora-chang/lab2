@@ -1,4 +1,3 @@
-"""EEGNet for two-channel, 750-sample EEG trials."""
 import math
 import torch
 from torch import nn
@@ -15,12 +14,12 @@ def activation_layer(name, alpha=1.0, negative_slope=0.01):
 
 
 class EEGNet(nn.Module):
-    """Slide architecture by default; optional true depthwise-separable block.
 
-    The slide's 'separableConv' is actually a regular temporal Conv2d.
-    temporal_block='depthwise_separable' replaces it with depthwise + pointwise
-    convolution. Both produce 736 features for input (B, 1, 2, 750).
-    """
+
+
+
+
+
 
     def __init__(self, activation="elu", elu_alpha=1.0, dropout=0.25,
                  negative_slope=0.01, temporal_block="slide"):
@@ -63,4 +62,4 @@ class EEGNet(nn.Module):
         if x.ndim != 4 or tuple(x.shape[1:]) != (1, 2, 750):
             raise ValueError(f"Expected (B, 1, 2, 750), got {tuple(x.shape)}")
         x = self.separableConv(self.depthwiseConv(self.firstconv(x)))
-        return self.classify(torch.flatten(x, 1))  # Raw logits for cross entropy.
+        return self.classify(torch.flatten(x, 1))

@@ -1,4 +1,3 @@
-"""Controlled comparison and batch restart safeguards."""
 import importlib.util
 import json
 from pathlib import Path

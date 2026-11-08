@@ -1,7 +1,3 @@
-"""DeepConvNet training using the original EEGNet data/evaluation utilities.
-
-The historical main.py is intentionally unchanged to preserve EEGNet hashes.
-"""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -57,7 +53,7 @@ def load_config(path, output_dir=None, epochs=None, seed=None):
     name=config['experiment_name']
     if not name or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in name):
         raise ValueError('Invalid experiment name')
-    # Constructor validates activation, dropout, and constraints before any output.
+
     with torch.random.fork_rng(devices=[]):
         DeepConvNet(**{k:v for k,v in config['model'].items() if k!='name'})
     return config

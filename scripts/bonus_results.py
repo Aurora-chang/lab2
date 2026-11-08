@@ -1,4 +1,3 @@
-"""Plot and independently review DeepConvNet bonus artifacts without training."""
 import argparse
 import csv
 import json
@@ -127,7 +126,7 @@ def review(output,device='cpu'):
 
 
 def export_public(output,destination):
-    """Export reviewed, weight-free snapshots with portable paths for GitHub."""
+
     audit=json.loads((output/'local_review.json').read_text())
     if audit['status']!='passed' or audit['new_full_runs']!=5:
         raise ValueError('Complete independent review required before public export')

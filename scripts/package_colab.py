@@ -1,4 +1,3 @@
-"""Build a private Colab upload ZIP with code, configs, notebook, and local data."""
 from pathlib import Path
 import zipfile
 ROOT=Path(__file__).resolve().parents[1]
